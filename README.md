@@ -28,3 +28,15 @@ Open:
 
 JWT settings are in `appsettings.json` under `Jwt`. For real deployments, replace the signing key using environment variables / secrets.
 
+## Deploy on Render (Docker)
+
+Render doesn’t have a dedicated ASP.NET preset in the UI. Deploy this repo as a **Docker** web service using the included `Dockerfile`.
+
+Minimum env vars to set on Render:
+
+- `Jwt__SigningKey` (replace the dev key)
+- Optional (recommended): `ASPNETCORE_FORWARDEDHEADERS_ENABLED=true`
+
+If you want purchases/users to persist across deploys, attach a Render disk and set:
+
+- `STRIDE_DATA_DIR=/var/data` (or whatever mount path you choose)

@@ -16,6 +16,13 @@ public sealed class JsonDataStore : IJsonDataStore
 
     public JsonDataStore(IHostEnvironment env)
     {
+        var dataDir = Environment.GetEnvironmentVariable("STRIDE_DATA_DIR");
+        if (!string.IsNullOrWhiteSpace(dataDir))
+        {
+            _path = Path.Combine(dataDir, "stride-db.json");
+            return;
+        }
+
         _path = Path.Combine(env.ContentRootPath, "App_Data", "stride-db.json");
     }
 
