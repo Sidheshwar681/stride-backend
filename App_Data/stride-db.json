@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "users": [
+    {
+      "id": "73475a06-d3eb-46e0-8f7a-9023de5266e1",
+      "username": "user18627b3a",
+      "email": "user18627b3a@example.com",
+      "passwordHash": "PBKDF2$210000$euLRUMg\u002B1ujYDqw7o05ybw==$maNVpv35scnRHSYKdqXRIc3ICk/7o7FSXlX7q/6/UG0=",
+      "createdAt": "2026-05-22T15:24:29.8152208+00:00"
+    },
+    {
+      "id": "a7cbaac7-c72c-4783-b8e7-a4c2eb976801",
+      "username": "sid",
+      "email": "sidkokalge@gmail.com",
+      "passwordHash": "PBKDF2$210000$WTBjNdYkEtJ\u002BiwVbwkDVZQ==$EpFktkGJBPB\u002BBJ7SVM5G9jJ/DS8W3Cv2g0fMqFIkFdo=",
+      "createdAt": "2026-05-22T15:29:49.0687515+00:00"
+    },
+    {
+      "id": "45b18852-3d4b-4c4d-82d1-524964255de2",
+      "username": "sidd",
+      "email": "kokalgesidheshwar45@gmail.com",
+      "passwordHash": "PBKDF2$210000$2zFrERe7hiXmg1\u002BwIGP\u002B5w==$R9bjY7\u002BXltAy4eUTvY1rQwSs0OpcA7A8S1BFV8DxFng=",
+      "createdAt": "2026-05-22T16:39:56.7270236+00:00"
+    }
+  ],
+  "purchases": [
+    {
+      "id": "d3f19ae5-8fbf-4170-80a9-bc7ab1595c03",
+      "userId": "73475a06-d3eb-46e0-8f7a-9023de5266e1",
+      "userEmail": "user18627b3a@example.com",
+      "userUsername": "user18627b3a",
+      "createdAt": "2026-05-22T15:24:48.8838942+00:00",
+      "subtotal": 377,
+      "total": 377,
+      "items": [
+        {
+          "productId": "nova-runner",
+          "name": "Nova Runner",
+          "size": "9",
+          "quantity": 2,
+          "unitPrice": 129
+        },
+        {
+          "productId": "pulse-trainer",
+          "name": "Pulse Trainer",
+          "size": null,
+          "quantity": 1,
+          "unitPrice": 119
+        }
+      ]
+    },
+    {
+      "id": "c43e84aa-e9d2-4c70-a4fc-5db0c93c0628",
+      "userId": "a7cbaac7-c72c-4783-b8e7-a4c2eb976801",
+      "userEmail": "sidkokalge@gmail.com",
+      "userUsername": "sid",
+      "createdAt": "2026-05-22T15:30:15.9546793+00:00",
+      "subtotal": 248,
+      "total": 248,
+      "items": [
+        {
+          "productId": "nova-runner",
+          "name": "Nova Runner",
+          "size": null,
+          "quantity": 1,
+          "unitPrice": 129
+        },
+        {
+          "productId": "pulse-trainer",
+          "name": "Pulse Trainer",
+          "size": null,
+          "quantity": 1,
+          "unitPrice": 119
+        }
+      ]
+    },
+    {
+      "id": "abeade71-dd8c-4b80-aaf6-fda0797c0c1e",
+      "userId": "a7cbaac7-c72c-4783-b8e7-a4c2eb976801",
+      "userEmail": "sidkokalge@gmail.com",
+      "userUsername": "sid",
+      "createdAt": "2026-05-22T15:30:39.1709704+00:00",
+      "subtotal": 159,
+      "total": 159,
+      "items": [
+        {
+          "productId": "trailworks-pro",
+          "name": "Trailworks Pro",
+          "size": "9",
+          "quantity": 1,
+          "unitPrice": 159
+        }
+      ]
+    },
+    {
+      "id": "21428bc9-1e46-450c-bc44-a47e12b6facf",
+      "userId": "45b18852-3d4b-4c4d-82d1-524964255de2",
+      "userEmail": "kokalgesidheshwar45@gmail.com",
+      "userUsername": "sidd",
+      "createdAt": "2026-05-22T16:56:21.1947242+00:00",
+      "subtotal": 149,
+      "total": 149,
+      "items": [
+        {
+          "productId": "aero-knit",
+          "name": "Aero Knit",
+          "size": null,
+          "quantity": 1,
+          "unitPrice": 149
+        }
+      ]
+    }
+  ]
+}
