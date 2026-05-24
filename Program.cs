@@ -14,41 +14,34 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddControllers();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.Configure<JwtOptions>(
     builder.Configuration.GetSection(JwtOptions.SectionName));
 
-var jwtOptions =
-    builder.Configuration.GetSection(JwtOptions.SectionName)
+var jwtOptions = builder.Configuration
+    .GetSection(JwtOptions.SectionName)
     .Get<JwtOptions>() ?? new JwtOptions();
 
-if (string.IsNullOrWhiteSpace(jwtOptions.SigningKey))
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+.AddJwtBearer(options =>
 {
-    throw new InvalidOperationException(
-        $"Missing JWT signing key.");
-}
-
-builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        options.MapInboundClaims = false;
+        ValidateIssuer = true,
+        ValidIssuer = jwtOptions.Issuer,
 
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidIssuer = jwtOptions.Issuer,
+        ValidateAudience = true,
+        ValidAudience = jwtOptions.Audience,
 
-            ValidateAudience = true,
-            ValidAudience = jwtOptions.Audience,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(jwtOptions.SigningKey)),
 
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(jwtOptions.SigningKey)),
-
-            ValidateLifetime = true,
-            ClockSkew = TimeSpan.FromSeconds(15),
-        };
-    });
+        ValidateLifetime = true
+    };
+});
 
 builder.Services.AddAuthorization();
 
@@ -59,27 +52,14 @@ builder.Services.AddSingleton<TokenService>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<PurchaseRepository>();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+var app = builder.Build();
+
 app.UseSwagger();
 app.UseSwaggerUI();
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("dev",
-        p => p.AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowAnyOrigin());
-});
-
-var app = builder.Build();
-
 app.UseHttpsRedirection();
 
-app.UseCors("dev");
-
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapControllers();

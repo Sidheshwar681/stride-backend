@@ -24,6 +24,8 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
 
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
 
 </Project>
