@@ -12,8 +12,8 @@ using Stride.Api.Data;
 namespace Stride.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260523141707_AddNewTables")]
-    partial class AddNewTables
+    [Migration("20260524174305_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
