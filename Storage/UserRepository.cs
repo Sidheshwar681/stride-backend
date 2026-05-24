@@ -34,9 +34,8 @@ public sealed class UserRepository
         }
 
         return await _context.Users.FirstOrDefaultAsync(
-            u =>
-                u.Email.ToLower() == value.ToLower() ||
-                u.Username.ToLower() == value.ToLower(),
+            u => u.Email.ToLower() == value.ToLower()
+              || u.Username.ToLower() == value.ToLower(),
             cancellationToken);
     }
 
@@ -54,7 +53,8 @@ public sealed class UserRepository
             return (null, "Username is required.");
         }
 
-        if (string.IsNullOrWhiteSpace(normalizedEmail) || !normalizedEmail.Contains('@'))
+        if (string.IsNullOrWhiteSpace(normalizedEmail) ||
+            !normalizedEmail.Contains('@'))
         {
             return (null, "A valid email is required.");
         }

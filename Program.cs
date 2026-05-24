@@ -24,7 +24,7 @@ var jwtOptions =
 if (string.IsNullOrWhiteSpace(jwtOptions.SigningKey))
 {
     throw new InvalidOperationException(
-        $"Missing JWT signing key. Set '{JwtOptions.SectionName}:SigningKey' in appsettings.json.");
+        $"Missing JWT signing key.");
 }
 
 builder.Services
@@ -71,9 +71,6 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.UseDefaultFiles();
-app.UseStaticFiles();
-
 app.UseCors("dev");
 
 app.UseAuthentication();
@@ -81,7 +78,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.MapFallbackToFile("index.html");
 
 app.Run();

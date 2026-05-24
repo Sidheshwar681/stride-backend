@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stride.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07998c1f20e12fb49f79edb4f820c0a5647fd7fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae7a6502140d4f4d9ef349d3ec7b8b7fea7eb6b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stride.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stride.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

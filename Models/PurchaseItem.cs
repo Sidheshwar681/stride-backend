@@ -4,10 +4,6 @@ public sealed class PurchaseItem
 {
     public Guid Id { get; set; }
 
-    public Guid PurchaseId { get; set; }
-
-    public Purchase Purchase { get; set; } = null!;
-
     public string ProductId { get; set; } = "";
 
     public string Name { get; set; } = "";
@@ -17,4 +13,8 @@ public sealed class PurchaseItem
     public int Quantity { get; set; }
 
     public decimal UnitPrice { get; set; }
+
+    public Guid PurchaseId { get; set; }
+
+    public Purchase? Purchase { get; set; }
 }
