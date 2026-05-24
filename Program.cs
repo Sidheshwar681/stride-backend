@@ -59,6 +59,11 @@ builder.Services.AddSingleton<TokenService>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<PurchaseRepository>();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+app.UseSwagger();
+app.UseSwaggerUI();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("dev",
