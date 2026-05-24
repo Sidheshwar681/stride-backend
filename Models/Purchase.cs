@@ -2,14 +2,19 @@ namespace Stride.Api.Models;
 
 public sealed class Purchase
 {
-    public Guid Id { get; init; }
-    public Guid UserId { get; init; }
-    public string UserEmail { get; init; } = "";
-    public string UserUsername { get; init; } = "";
-    public DateTimeOffset CreatedAt { get; init; }
+    public Guid Id { get; set; }
 
-    public decimal Subtotal { get; init; }
-    public decimal Total { get; init; }
+    public Guid UserId { get; set; }
 
-    public List<PurchaseItem> Items { get; init; } = new();
+    public string UserEmail { get; set; } = "";
+
+    public string UserUsername { get; set; } = "";
+
+    public DateTimeOffset CreatedAt { get; set; }
+
+    public decimal Subtotal { get; set; }
+
+    public decimal Total { get; set; }
+
+    public List<PurchaseItem> Items { get; set; } = new();
 }
