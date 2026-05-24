@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Stride.Api.props" />
-</Project>
