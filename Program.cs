@@ -31,7 +31,7 @@ var jwtOptions = builder.Configuration
 if (string.IsNullOrWhiteSpace(jwtOptions.SigningKey))
 {
     throw new InvalidOperationException(
-        $"Missing JWT signing key in configuration.");
+        "Missing JWT signing key in configuration.");
 }
 
 // Authentication
@@ -71,10 +71,13 @@ builder.Services.AddScoped<PurchaseRepository>();
 // CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("AllowVercel", policy =>
     {
         policy
-            .AllowAnyOrigin()
+            .WithOrigins(
+                "https://stride-frontend-one.vercel.app",
+                "http://localhost:5173"
+            )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -82,34 +85,18 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Auto Apply EF Core Migrations
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-
-    try
-    {
-        //db.Database.Migrate();
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("Migration failed:");
-        Console.WriteLine(ex.Message);
-    }
-}
-
 // Swagger
-app.UseSwagger();
-app.UseSwaggerUI();
-
-// Error Page
-app.UseDeveloperExceptionPage();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 // HTTPS
 app.UseHttpsRedirection();
 
 // CORS
-app.UseCors("AllowAll");
+app.UseCors("AllowVercel");
 
 // Authentication & Authorization
 app.UseAuthentication();
