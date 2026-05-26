@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\kokal\\OneDrive\\Desktop\\s3Bucket\\server\\Stride.Api\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAQwEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAQwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-22T16:51:04.23Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Stride.Api.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-22T16:50:47.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T16:50:47.987Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Services\\TokenService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T16:50:22.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T16:50:22.195Z"
             }
           ]
         }
